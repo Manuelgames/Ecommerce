@@ -1,4 +1,5 @@
 const carrito = document.querySelector('.main-carrito-compras');
+
 const menuopcion = document.querySelector('.menu-opcion');
 
 const main_opciones = document.querySelector('.main-opciones-lista')
@@ -7,18 +8,15 @@ const cardscontainer = document.querySelector('.Cards');
 
 menuopcion.addEventListener('click',toggleMenuOpciones);
 
-console.log(main_opciones.classList.contains);
+console.log(main_opciones.classList[1]);
 
 function toggleMenuOpciones(){
-    
-    if(main_opciones.classList.contains){
 
-     main_opciones.classList.toggle('inactive');
+    if(!main_opciones.classList[1]){
+        main_opciones.classList.toggle('inactive');
     }
-    
-    
 
-
+    
 }
 
 
