@@ -11,10 +11,10 @@ menuopcion.addEventListener('click',toggleMenuOpciones);
 console.log(main_opciones.classList[1]);
 
 function toggleMenuOpciones(){
-
-    if(!main_opciones.classList[1]){
-        main_opciones.classList.toggle('inactive');
-    }
+    main_opciones.classList.toggle('inactive');
+    // if(!main_opciones.classList[1]){
+    //     main_opciones.classList.toggle('inactive'); 
+    // }
 
     
 }
@@ -111,17 +111,17 @@ function renderProducts(product){
         productimgcard.src = './assets/bt_add_to_cart.svg';
 
         //metodo para meter a lo hijos a los padres
+        cardscontainer.appendChild(productcard);
         
              
-        // productcard.appendChild(productinfo);
+        productcard.appendChild(productinfo);
 
-        // productfigure.appendChild(productimgcard);
-        // productcard.appendChild(productimg);
-        // productinfo.appendChild(divinfo);
-        // productinfo.appendChild(productfigure);
+        productfigure.appendChild(productimgcard);
+        productcard.appendChild(productimg);
+        productinfo.appendChild(divinfo);
+        productinfo.appendChild(productfigure);
 
         
-        cardscontainer.appendChild(productcard);
 
         //NOTA AQUI SOLO SE DECLARAN E INICIALIZAN LAS VARIABLES QUE NO SE INICIALIZAN EN EL HTML
 
