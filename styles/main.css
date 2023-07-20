@@ -102,6 +102,10 @@ main{
     height: 300px;
 }
 
+.product-card{
+    margin: 15px 0 0 0;
+}
+
 .product-card p{
     font-size: 2rem;
     color: black;

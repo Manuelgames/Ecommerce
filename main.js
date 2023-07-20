@@ -62,6 +62,9 @@ function renderProducts(product){
         //POR LO QUE CUALQUIER ETIQUETA SE TIENE QUE DECLARAR Y PONER NOMBRE
 
 
+        //INICIALIZAMOS Y DECLARAMOS LAS CONSTANTES DE LAS ETIQUETAS
+
+
         //primero se declara el contenedor que contendra la informacion de la tarjeta
         const productcard = document.createElement('div')
         //metodo para ponerle el nombre
@@ -82,13 +85,6 @@ function renderProducts(product){
         //nombre de clase
         divinfo.classList.add('divinfo');
         
-        //constante para el precio
-        const productprice = document.createElement('p')
-        //nombre del parrafo
-        productprice.classList.add('parrafo-precio')
-        //metodo para añadirle el precio de la variable
-        productprice.innerText= '$' + product.price;
-
         //constante para el nombre del articulo
         const productname = document.createElement('p');
         //metodo para ponerle nombre
@@ -96,9 +92,13 @@ function renderProducts(product){
         //metodo para ponerle el nombre de la variable
         productname.innerText = product.name;
 
+        //constante para el precio
+        const productprice = document.createElement('p')
+        //nombre del parrafo
+        productprice.classList.add('parrafo-precio')
+        //metodo para añadirle el precio de la variable
+        productprice.innerText= '$' + product.price;
 
-        //con el metodo append asignamos como hijos a la etiqueta padre
-        productinfo.append(productprice, productname);
 
         //contendor figure
         const productfigure = document.createElement('figure')
@@ -107,8 +107,12 @@ function renderProducts(product){
 
         //añadir imagen
         productimgcard = document.createElement('img')
+        //asignamos un nombre de a la etiqueta
+        productimgcard.classList.add('figure-img-carrito');    
         //metodo para poner la ruta de la imagen
         productimgcard.src = './assets/bt_add_to_cart.svg';
+        //ASIGNAMOS LA JERARQUIA DE LAS ETIQUETAS CONTENEDORAS
+
 
         //metodo para meter a lo hijos a los padres
         //1
@@ -120,9 +124,9 @@ function renderProducts(product){
         //4
         productinfo.appendChild(divinfo);
         //5
-        divinfo.appendChild(productprice);
-        //6
         divinfo.appendChild(productname);
+        //6
+        divinfo.appendChild(productprice);
         //7
         productinfo.appendChild(productfigure);
         //8
