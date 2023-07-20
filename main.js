@@ -14,20 +14,20 @@ const productlist = [];
 //despues para añadir los articulos al arreglo, con la funcion push añadimos los distintos objetos en este caso serian los articulos
 
 productlist.push({
-    name: 'hamburguesa bacon',
+    name: 'HAMBURGUESA BACON',
     price: '90.00',
     image: 'https://www.folhadealphaville.com.br/images/articles/3963/b2ap3_medium_bullguer-lanca-red-neck-bacon-duplamente-defumado-geek-publicitario.jpg'
 });
 
 productlist.push({
-    name: 'hamburguesa BBQ',
+    name: 'HAMBURGUESA BBQ',
     price: '120.00',
     image: 'https://tse3.mm.bing.net/th?id=OIP.E_wlXSgmQr7P-1yztndGGQHaE8&pid=Api&P=0&h=180'
 });
 
 
 productlist.push({
-    name:'hamburguesa guacamole',
+    name:'HAMBURGUESA GUACAMOLE',
     price: '190',
     image: 'https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/13d252b964447e64a64e17a6f33c069a.jpg'
 });
