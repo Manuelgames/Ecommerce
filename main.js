@@ -3,23 +3,7 @@ const carrito = document.querySelector('.main-carrito-compras');
 const menuopcion = document.querySelector('.menu-opcion');
 
 const main_opciones = document.querySelector('.main-opciones-lista')
-const cardscontainer = document.querySelector('.Cards');
-
-
-menuopcion.addEventListener('click',toggleMenuOpciones);
-
-console.log(main_opciones.classList[1]);
-
-function toggleMenuOpciones(){
-    main_opciones.classList.toggle('inactive');
-    // if(!main_opciones.classList[1]){
-    //     main_opciones.classList.toggle('inactive'); 
-    // }
-
-    
-}
-
-
+const cardscontainer = document.querySelector('.cards');
 
 //RUTINA PARA LA CREACION DE ARTICULOS
 
@@ -32,7 +16,7 @@ const productlist = [];
 productlist.push({
     name: 'hamburguesa bacon',
     price: '90.00',
-    imagen: 'https://www.folhadealphaville.com.br/images/articles/3963/b2ap3_medium_bullguer-lanca-red-neck-bacon-duplamente-defumado-geek-publicitario.jpg'
+    image: 'https://www.folhadealphaville.com.br/images/articles/3963/b2ap3_medium_bullguer-lanca-red-neck-bacon-duplamente-defumado-geek-publicitario.jpg'
 });
 
 productlist.push({
@@ -48,8 +32,24 @@ productlist.push({
     image: 'https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/13d252b964447e64a64e17a6f33c069a.jpg'
 });
 
-
+//La funcion la ponemos despues para que no haya problemas con la renderizacion de las cosas
 window.onload = renderProducts(productlist);
+
+menuopcion.addEventListener('click',toggleMenuOpciones);
+
+// console.log(main_opciones.classList[1]);
+
+function toggleMenuOpciones(){
+    main_opciones.classList.toggle('inactive');
+    // if(!main_opciones.classList[1]){
+    //     main_opciones.classList.toggle('inactive'); 
+    // }
+}
+
+
+
+
+
 
 function renderProducts(product){
     //producto es la variable de referencia la cual representa el arreglo la cual servira como indice
@@ -70,7 +70,7 @@ function renderProducts(product){
         //constante de la creacion de la imagen
         const productimg = document.createElement('img')
         //metodo para ponerle nombre
-        productimg.classList.add('src', product.image)
+        productimg.src = product.image;
   
         //contenedor de otro contendor el cual contendra la informacion del producto
         const productinfo = document.createElement('div')
@@ -87,7 +87,7 @@ function renderProducts(product){
         //nombre del parrafo
         productprice.classList.add('parrafo-precio')
         //metodo para añadirle el precio de la variable
-        productprice.innerText= '$' + product.precio;
+        productprice.innerText= '$' + product.price;
 
         //constante para el nombre del articulo
         const productname = document.createElement('p');
@@ -111,22 +111,29 @@ function renderProducts(product){
         productimgcard.src = './assets/bt_add_to_cart.svg';
 
         //metodo para meter a lo hijos a los padres
+        //1
         cardscontainer.appendChild(productcard);
-        
-             
-        productcard.appendChild(productinfo);
-
-        productfigure.appendChild(productimgcard);
+        //2
         productcard.appendChild(productimg);
+        //3     
+        productcard.appendChild(productinfo);
+        //4
         productinfo.appendChild(divinfo);
+        //5
+        divinfo.appendChild(productprice);
+        //6
+        divinfo.appendChild(productname);
+        //7
         productinfo.appendChild(productfigure);
-
-        
+        //8
+        productfigure.appendChild(productimgcard);
 
         //NOTA AQUI SOLO SE DECLARAN E INICIALIZAN LAS VARIABLES QUE NO SE INICIALIZAN EN EL HTML
-
+        //1
         // <!--0 <div class="product-card">
+        //2
         // <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+        //
         // <div class="product-info">
         //   <div>
         //     <p>$120,00</p>
