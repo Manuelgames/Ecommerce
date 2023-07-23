@@ -5,6 +5,12 @@ const menuopcion = document.querySelector('.menu-opcion');
 const main_opciones = document.querySelector('.main-opciones-lista')
 const cardscontainer = document.querySelector('.cards');
 
+const carritoproducts = document.querySelector('.carrito-compras'); 
+
+const figurecarrito = document.querySelector('.figure-img-carrito');
+
+
+const contadorproducts = document.querySelector('.compras-contador-productos');
 //RUTINA PARA LA CREACION DE ARTICULOS
 
 //creacion de articulos en el main
@@ -36,6 +42,7 @@ productlist.push({
 window.onload = renderProducts(productlist);
 
 menuopcion.addEventListener('click',toggleMenuOpciones);
+// figurecarrito.addEventListerner('click',togglecarritoCompras);
 
 // console.log(main_opciones.classList[1]);
 
@@ -150,4 +157,9 @@ function renderProducts(product){
         // </div> -->
     
     }
+}
+
+
+function togglecarritoCompras(){
+
 }
