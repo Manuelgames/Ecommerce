@@ -165,7 +165,7 @@ main{
     z-index: 1;
 }
 
-.main-carrito-compras a{
+.main-carrito-compras .carrito-compras{
     display: flex;
     flex-direction: column;
     height: 75px;
@@ -178,11 +178,11 @@ main{
 }
 
 
-.main-carrito-compras a img{
+.main-carrito-compras .carrito-compras img{
     margin: 0 0 10px 0;
 }
 
-.main-carrito-compras a p{
+.main-carrito-compras .carrito-compras p{
     width: 25px;
     font-size: 2rem;
     border-radius: 50px;
@@ -198,13 +198,12 @@ main{
 /*INTERFAZ DE LOS PRODUCTOS SELECCIONADOS EN EL CARRITO*/
 .main-carrito-lista{
     position: fixed;
-    display: flex;
     width: 100%;
     height: 100vh;
     top: 100px;
     justify-content: center;
     backdrop-filter: blur(2px);
-    z-index: 2;
+    z-index: 1;
 }
 
 .carrito-lista-products{
@@ -212,7 +211,7 @@ main{
     flex-direction: column;
     width: 75%;
     height: 500px;
-    margin: 50px 0;
+    margin: 50px auto;
     border:1px solid black;
     box-shadow: 1px 1px 1px 1px black;
     border-radius: 50px;

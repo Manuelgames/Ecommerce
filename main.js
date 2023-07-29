@@ -3,14 +3,23 @@ const carrito = document.querySelector('.main-carrito-compras');
 const menuopcion = document.querySelector('.menu-opcion');
 
 const main_opciones = document.querySelector('.main-opciones-lista')
+
 const cardscontainer = document.querySelector('.cards');
 
-const carritoproducts = document.querySelector('.carrito-compras'); 
+const btncarritoproducts = document.querySelector('.carrito-compras'); 
 
-const figurecarrito = document.querySelector('.figure-img-carrito');
+const carritoproduct = document.querySelector('.figure-img-carrito');
 
+const contadorproductos = document.querySelector('.compras-contador-productos');
 
-const contadorproducts = document.querySelector('.compras-contador-productos');
+const cuadro_carrito = document.querySelector('.main-carrito-lista');
+
+const divcarritocuadro = document.querySelector('.carrito-lista-products');
+
+const tachacarrito = document.querySelector('.carrito-lista-tacha');
+
+const contadorcarrito = document.querySelector('.compras-contador-productos');
+
 //RUTINA PARA LA CREACION DE ARTICULOS
 
 //creacion de articulos en el main
@@ -40,9 +49,26 @@ productlist.push({
 
 //La funcion la ponemos despues para que no haya problemas con la renderizacion de las cosas
 window.onload = renderProducts(productlist);
-
+//funcion para las opciones de la lista, para dispositivos mobiles
 menuopcion.addEventListener('click',toggleMenuOpciones);
-// figurecarrito.addEventListerner('click',togglecarritoCompras);
+
+//abrir el menu del carrito
+btncarritoproducts.addEventListener('click', togglemenucarrito);
+
+tachacarrito.addEventListener('click', togglemenucarrito);
+carritoproduct.addEventListener('click', nuevoproducto);
+
+
+
+function nuevoproducto(){
+    let nueesdf;
+    contadorproductos.innerHTML = 'asdasd';
+}
+   
+
+// //funcion para cerrar el cuadro del carrito de compras
+// tachacarrito.addEventListener('click', tachacarritofun);
+
 
 // console.log(main_opciones.classList[1]);
 
@@ -52,9 +78,9 @@ function toggleMenuOpciones(){
     //     main_opciones.classList.toggle('inactive'); 
     // }
 }
-
-
-
+function togglemenucarrito(){
+    cuadro_carrito.classList.toggle('inactive');
+}
 
 
 
@@ -159,7 +185,3 @@ function renderProducts(product){
     }
 }
 
-
-function togglecarritoCompras(){
-
-}
