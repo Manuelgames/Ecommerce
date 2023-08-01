@@ -66,6 +66,15 @@ header{
     margin: 0 15px 0 15px;
 }
 
+.nav-container-modal{
+    position: fixed;
+    opacity: 0.8;
+    width: 100%;
+    height: inherit;
+    z-index: 1;
+    background-color: black;
+}
+
 
 
 
@@ -183,7 +192,7 @@ main{
 }
 
 .main-carrito-compras .carrito-compras p{
-    width: 25px;
+    width: 40px;
     font-size: 2rem;
     border-radius: 50px;
     font-weight: 600;
@@ -199,7 +208,7 @@ main{
 .main-carrito-lista{
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: auto;
     top: 100px;
     justify-content: center;
     backdrop-filter: blur(2px);
@@ -208,21 +217,23 @@ main{
 
 .carrito-lista-products{
     display: flex;
+    overflow-y: scroll;
     flex-direction: column;
-    width: 75%;
-    height: 500px;
-    margin: 50px auto;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    margin: 0 auto;
     border:1px solid black;
     box-shadow: 1px 1px 1px 1px black;
-    border-radius: 50px;
+    border-radius: 10px;
     background-color: white;
 }
 
 
-.carrito-lista-products img{
+.carrito-lista-products .carrito-lista-tacha{
     position: absolute;
     right: 0;
-    margin: 10px 60px 0 0;
+    margin: 10px 20px 0 0;
 }
 
 .carrito-lista-descripcion h1{

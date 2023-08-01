@@ -1,24 +1,18 @@
 const carrito = document.querySelector('.main-carrito-compras');
-
 const menuopcion = document.querySelector('.menu-opcion');
-
 const main_opciones = document.querySelector('.main-opciones-lista')
-
 const cardscontainer = document.querySelector('.cards');
-
 const btncarritoproducts = document.querySelector('.carrito-compras'); 
-
-const carritoproduct = document.querySelector('.figure-img-carrito');
-
 const contadorproductos = document.querySelector('.compras-contador-productos');
-
 const cuadro_carrito = document.querySelector('.main-carrito-lista');
-
 const divcarritocuadro = document.querySelector('.carrito-lista-products');
-
 const tachacarrito = document.querySelector('.carrito-lista-tacha');
-
 const contadorcarrito = document.querySelector('.compras-contador-productos');
+const modalCarritoNav = document.querySelector('.nav-container-modal');
+//importante recordar que existe el asincronismo. Por que habra funciones o eventos que se tienen que ejecutar o mandar llamar en lugares especificos para que los valores o propiedades no generan problemas.
+
+
+
 
 //RUTINA PARA LA CREACION DE ARTICULOS
 
@@ -56,16 +50,22 @@ menuopcion.addEventListener('click',toggleMenuOpciones);
 btncarritoproducts.addEventListener('click', togglemenucarrito);
 
 tachacarrito.addEventListener('click', togglemenucarrito);
-carritoproduct.addEventListener('click', nuevoproducto);
 
-
+modalCarritoNav.addEventListener('click', togglemodalcarrito);
 
 function nuevoproducto(){
-    let nueesdf;
-    contadorproductos.innerHTML = 'asdasd';
+    if(contadorcarrito.innerHTML < 999){
+        let contador = contadorcarrito.innerText;
+        contador++;
+        contadorcarrito.innerText = contador;
+        console.log(contadorcarrito.innerHTML);
+    }
 }
-   
 
+function togglemodalcarrito(){
+    cuadro_carrito.classList.toggle('inactive');
+    modalCarritoNav.classList.toggle('inactive');
+}
 // //funcion para cerrar el cuadro del carrito de compras
 // tachacarrito.addEventListener('click', tachacarritofun);
 
@@ -80,6 +80,7 @@ function toggleMenuOpciones(){
 }
 function togglemenucarrito(){
     cuadro_carrito.classList.toggle('inactive');
+    modalCarritoNav.classList.toggle('inactive');
 }
 
 
@@ -93,16 +94,16 @@ function renderProducts(product){
         //HAY QUE TENER EN CUENTA QUE AQUI ES DONDE SE ESTRUCTURA EL CONTENDOR CON LA INFORMACION QUE LE VAYAMOS A AÑADIR
         //AQUI SE VA ESTRUCTURAR UNA TARJETA DE UN ARTICULO PARA LA PANTALLA INICIAL 
         //POR LO QUE CUALQUIER ETIQUETA SE TIENE QUE DECLARAR Y PONER NOMBRE
-
-
+        
+        
         //INICIALIZAMOS Y DECLARAMOS LAS CONSTANTES DE LAS ETIQUETAS
-
-
+        
+        
         //primero se declara el contenedor que contendra la informacion de la tarjeta
         const productcard = document.createElement('div')
         //metodo para ponerle el nombre
         productcard.classList.add('product-card')
-
+        
         //constante de la creacion de la imagen
         const productimg = document.createElement('img')
         //metodo para ponerle nombre
@@ -112,7 +113,7 @@ function renderProducts(product){
         const productinfo = document.createElement('div')
         //nombre de la clase
         productinfo.classList.add('productinfo')
-
+        
         //contenedor de div
         const divinfo = document.createElement('div')
         //nombre de clase
@@ -124,29 +125,31 @@ function renderProducts(product){
         productname.classList.add('parrafo-nombre');
         //metodo para ponerle el nombre de la variable
         productname.innerText = product.name;
-
+        
         //constante para el precio
         const productprice = document.createElement('p')
         //nombre del parrafo
         productprice.classList.add('parrafo-precio')
         //metodo para añadirle el precio de la variable
         productprice.innerText= '$' + product.price;
-
-
+        
+        
         //contendor figure
         const productfigure = document.createElement('figure')
         //nombre de figure
         productfigure.classList.add = 'figure'
-
+        
+        
+        
         //añadir imagen
         productimgcard = document.createElement('img')
         //asignamos un nombre de a la etiqueta
-        productimgcard.classList.add('figure-img-carrito');    
+        productimgcard.classList.add('figure-img-carrito');
         //metodo para poner la ruta de la imagen
         productimgcard.src = './assets/bt_add_to_cart.svg';
         //ASIGNAMOS LA JERARQUIA DE LAS ETIQUETAS CONTENEDORAS
-
-
+        
+        
         //metodo para meter a lo hijos a los padres
         //1
         cardscontainer.appendChild(productcard);
@@ -164,7 +167,7 @@ function renderProducts(product){
         productinfo.appendChild(productfigure);
         //8
         productfigure.appendChild(productimgcard);
-
+        
         //NOTA AQUI SOLO SE DECLARAN E INICIALIZAN LAS VARIABLES QUE NO SE INICIALIZAN EN EL HTML
         //1
         // <!--0 <div class="product-card">
@@ -181,7 +184,9 @@ function renderProducts(product){
         //   </figure>
         // </div>
         // </div> -->
-    
+        
+        //evento para contar la cantidad de productos del carrito    
+        productimgcard.addEventListener('click', nuevoproducto);
     }
 }
 
