@@ -9,6 +9,9 @@ const divcarritocuadro = document.querySelector('.carrito-lista-products');
 const tachacarrito = document.querySelector('.carrito-lista-tacha');
 const contadorcarrito = document.querySelector('.compras-contador-productos');
 const modalCarritoNav = document.querySelector('.nav-container-modal');
+const tachadetalles = document.querySelector('.descripcion-cabecera-tacha');
+const modaldetalles = document.querySelector('.modal-producto-detalle');
+const productodetalles = document.querySelector('.main-producto-detalles');
 //importante recordar que existe el asincronismo. Por que habra funciones o eventos que se tienen que ejecutar o mandar llamar en lugares especificos para que los valores o propiedades no generan problemas.
 
 
@@ -25,20 +28,23 @@ const productlist = [];
 productlist.push({
     name: 'HAMBURGUESA BACON',
     price: '90.00',
-    image: 'https://www.folhadealphaville.com.br/images/articles/3963/b2ap3_medium_bullguer-lanca-red-neck-bacon-duplamente-defumado-geek-publicitario.jpg'
+    image: 'https://www.folhadealphaville.com.br/images/articles/3963/b2ap3_medium_bullguer-lanca-red-neck-bacon-duplamente-defumado-geek-publicitario.jpg',
+    detail: 'Una hamburguesa con carne de res, lechuga, tomate, cebolla, pan blando, pepinillos'
 });
 
 productlist.push({
     name: 'HAMBURGUESA BBQ',
     price: '120.00',
-    image: 'https://tse3.mm.bing.net/th?id=OIP.E_wlXSgmQr7P-1yztndGGQHaE8&pid=Api&P=0&h=180'
+    image: 'https://tse3.mm.bing.net/th?id=OIP.E_wlXSgmQr7P-1yztndGGQHaE8&pid=Api&P=0&h=180',
+    detail: 'Una hamburguesa con carne de res, lechuga, tomate, cebolla, pan blando, pepinillos'
 });
 
 
 productlist.push({
     name:'HAMBURGUESA GUACAMOLE',
     price: '190',
-    image: 'https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/13d252b964447e64a64e17a6f33c069a.jpg'
+    image: 'https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/13d252b964447e64a64e17a6f33c069a.jpg',
+    detail: 'Una hamburguesa con carne de res, lechuga, tomate, cebolla, pan blando, pepinillos'
 });
 
 //La funcion la ponemos despues para que no haya problemas con la renderizacion de las cosas
@@ -53,6 +59,9 @@ tachacarrito.addEventListener('click', togglemenucarrito);
 
 modalCarritoNav.addEventListener('click', togglemodalcarrito);
 
+tachadetalles.addEventListener('click', closeDetailProduct);
+
+modaldetalles.addEventListener('click', closeDetailProduct);
 function nuevoproducto(){
     if(contadorcarrito.innerHTML < 999){
         let contador = contadorcarrito.innerText;
@@ -83,6 +92,17 @@ function togglemenucarrito(){
     modalCarritoNav.classList.toggle('inactive');
 }
 
+//funcion para mostrar los detalles de un producto
+function closeDetailProduct(){
+    productodetalles.classList.add('inactive');
+}
+
+//funcion para abrir los detalles de un producto
+function openDetailProduct(){
+    productodetalles.classList.remove('inactive');
+    main_opciones.classList.add('inactive');
+}
+
 
 
 function renderProducts(product){
@@ -108,6 +128,7 @@ function renderProducts(product){
         const productimg = document.createElement('img')
         //metodo para ponerle nombre
         productimg.src = product.image;
+        productimg.addEventListener('click', openDetailProduct);
   
         //contenedor de otro contendor el cual contendra la informacion del producto
         const productinfo = document.createElement('div')
