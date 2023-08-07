@@ -62,12 +62,17 @@ modalCarritoNav.addEventListener('click', togglemodalcarrito);
 tachadetalles.addEventListener('click', closeDetailProduct);
 
 modaldetalles.addEventListener('click', closeDetailProduct);
-function nuevoproducto(){
+
+
+function nuevoproducto(nombre, precio, img){
+
     if(contadorcarrito.innerHTML < 999){
         let contador = contadorcarrito.innerText;
         contador++;
         contadorcarrito.innerText = contador;
         console.log(contadorcarrito.innerHTML);
+        
+
     }
 }
 
@@ -168,6 +173,8 @@ function renderProducts(product){
         productimgcard.classList.add('figure-img-carrito');
         //metodo para poner la ruta de la imagen
         productimgcard.src = './assets/bt_add_to_cart.svg';
+
+        
         //ASIGNAMOS LA JERARQUIA DE LAS ETIQUETAS CONTENEDORAS
         
         
@@ -206,8 +213,22 @@ function renderProducts(product){
         // </div>
         // </div> -->
         
+        let cargarProducto = [];
+        let articulo = {};
+
+        articulo = {
+            nombre: productname,
+            precio: productprice,
+            img: productimg,
+        };
+        cargarProducto.push = [articulo];
+
+        //para identificar y tener un contador de cada producto que se vaya añadiendo al carrito 
+        //comparamos si las imagenes son iguales se aumenta el contador para esto hacemos una condicional
+        //que compare si las imagenes son iguales con su valor, hay que usar la funcion con parametros.
+
         //evento para contar la cantidad de productos del carrito    
-        productimgcard.addEventListener('click', nuevoproducto);
+        productimgcard.addEventListener('click', nuevoproducto());
     }
 }
 
