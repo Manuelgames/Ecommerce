@@ -47,6 +47,7 @@ productlist.push({
     detail: 'Una hamburguesa con carne de res, lechuga, tomate, cebolla, pan blando, pepinillos'
 });
 
+
 //La funcion la ponemos despues para que no haya problemas con la renderizacion de las cosas
 window.onload = renderProducts(productlist);
 //funcion para las opciones de la lista, para dispositivos mobiles
@@ -64,17 +65,6 @@ tachadetalles.addEventListener('click', closeDetailProduct);
 modaldetalles.addEventListener('click', closeDetailProduct);
 
 
-function nuevoproducto(nombre, precio, img){
-
-    if(contadorcarrito.innerHTML < 999){
-        let contador = contadorcarrito.innerText;
-        contador++;
-        contadorcarrito.innerText = contador;
-        console.log(contadorcarrito.innerHTML);
-        
-
-    }
-}
 
 function togglemodalcarrito(){
     cuadro_carrito.classList.toggle('inactive');
@@ -107,6 +97,7 @@ function openDetailProduct(){
     productodetalles.classList.remove('inactive');
     main_opciones.classList.add('inactive');
 }
+
 
 
 
@@ -215,20 +206,84 @@ function renderProducts(product){
         
         let cargarProducto = [];
         let articulo = {};
-
+        let posicion = 0;
         articulo = {
             nombre: productname,
             precio: productprice,
             img: productimg,
         };
-        cargarProducto.push = [articulo];
-
+        
         //para identificar y tener un contador de cada producto que se vaya añadiendo al carrito 
         //comparamos si las imagenes son iguales se aumenta el contador para esto hacemos una condicional
         //que compare si las imagenes son iguales con su valor, hay que usar la funcion con parametros.
 
-        //evento para contar la cantidad de productos del carrito    
-        productimgcard.addEventListener('click', nuevoproducto());
+        
+        
+        
+        
+        
+        
     }
 }
 
+
+// //cantidad de productos de añadidos
+// console.log(productlist.length)
+
+//evento para contar la cantidad de productos del carrito    
+productimgcard.addEventListener('click', nuevoproducto(productlist, productlist.length));
+
+
+
+
+//resolver con metodo de filtro para encontrar los productos que se hayan seleccionado
+
+function nuevoproducto(product, countproducts){
+    if(contadorcarrito.innerHTML < 999){
+        let contadorgeneral = contadorcarrito.innerText;
+        let valor = [countproducts][countproducts];
+        valor[1][1] = 3;
+        console.log(valor[1][1]);
+        let  i, j;
+        let contadorproducto = [countproducts][countproducts];
+        if(product){
+
+
+            for(i = 0; i < countproducts; i++){
+                for(j = 0; j < countproducts; j++){
+
+                    valor[i][j] = product[i].image;
+                   
+                    if(valor[i][j] == product[j++].img){
+                        contadorproducto[i][j]++;
+                        contadorgeneral++;
+                        console.log('El contador total es de ',contadorgeneral, 'La hamburguesa es:',product[j].name, 'la veces que se guardo este producto son:', contadorproducto[i][j]);
+                    }
+ 
+                }
+
+
+                //console.log(valor);
+
+                // if(valor == product[i].img){
+                    
+                //     if(){
+                //         contadorgeneral++;
+                //         contadorcarrito.innerText = contadorgeneral;
+                //         console.log(contadorcarrito.innerHTML);
+                    
+                    
+                //     }
+
+
+                // }
+                
+            }
+        }
+    }
+    else{
+        alert('No es posible agregar mas productos a tu carrito has llegado al limite');
+    }
+}
+    
+    
