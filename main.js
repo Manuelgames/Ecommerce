@@ -25,6 +25,10 @@ const productlist = [];
 
 //despues para añadir los articulos al arreglo, con la funcion push añadimos los distintos objetos en este caso serian los articulos
 
+btncarritoproducts.addEventListener('click', valor);
+function valor(click){
+    console.log(click)
+}
 productlist.push({
     name: 'HAMBURGUESA BACON',
     price: '90.00',
@@ -231,59 +235,60 @@ function renderProducts(product){
 // console.log(productlist.length)
 
 //evento para contar la cantidad de productos del carrito    
-productimgcard.addEventListener('click', nuevoproducto(productlist, productlist.length));
+// productimgcard.addEventListener('click', nuevoproducto(productlist, productlist.length));
 
 
 
 
 //resolver con metodo de filtro para encontrar los productos que se hayan seleccionado
-
-function nuevoproducto(product, countproducts){
-    if(contadorcarrito.innerHTML < 999){
-        let contadorgeneral = contadorcarrito.innerText;
-        let valor = [countproducts][countproducts];
-        valor[1][1] = 3;
-        console.log(valor[1][1]);
-        let  i, j;
-        let contadorproducto = [countproducts][countproducts];
-        if(product){
+// function nuevoproducto(product, countproducts){
+//     if(contadorcarrito.innerHTML < 999){
 
 
-            for(i = 0; i < countproducts; i++){
-                for(j = 0; j < countproducts; j++){
+//         let contadorgeneral = contadorcarrito.innerText;
+//         let valor = [countproducts][countproducts];
+//         valor[1][1] = 3;
+//         console.log(valor[1][1]);
+//         let  i, j;
+//         let contadorproducto = [countproducts][countproducts];
+//         if(product){
 
-                    valor[i][j] = product[i].image;
+
+//             for(i = 0; i < countproducts; i++){
+//                 for(j = 0; j < countproducts; j++){
+
+//                     valor[i][j] = product[i].image;
                    
-                    if(valor[i][j] == product[j++].img){
-                        contadorproducto[i][j]++;
-                        contadorgeneral++;
-                        console.log('El contador total es de ',contadorgeneral, 'La hamburguesa es:',product[j].name, 'la veces que se guardo este producto son:', contadorproducto[i][j]);
-                    }
+//                     if(valor[i][j] == product[j++].img){
+//                         contadorproducto[i][j]++;
+//                         contadorgeneral++;
+//                         console.log('El contador total es de ',contadorgeneral, 'La hamburguesa es:',product[j].name, 'la veces que se guardo este producto son:', contadorproducto[i][j]);
+//                     }
  
-                }
+//                 }
 
 
-                //console.log(valor);
+//                 //console.log(valor);
 
-                // if(valor == product[i].img){
+//                 // if(valor == product[i].img){
                     
-                //     if(){
-                //         contadorgeneral++;
-                //         contadorcarrito.innerText = contadorgeneral;
-                //         console.log(contadorcarrito.innerHTML);
+//                 //     if(){
+//                 //         contadorgeneral++;
+//                 //         contadorcarrito.innerText = contadorgeneral;
+//                 //         console.log(contadorcarrito.innerHTML);
                     
                     
-                //     }
+//                 //     }
 
 
-                // }
+//                 // }
                 
-            }
-        }
-    }
-    else{
-        alert('No es posible agregar mas productos a tu carrito has llegado al limite');
-    }
-}
+//             }
+//         }
+//     }
+//     else{
+//         alert('No es posible agregar mas productos a tu carrito has llegado al limite');
+//     }
+// }
     
     

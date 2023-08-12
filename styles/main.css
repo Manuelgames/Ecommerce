@@ -48,7 +48,7 @@ header{
     z-index: 1;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(254, 63, 29);
+            background-color: rgb(254, 63, 29);
     color: white;
     
     /* border-bottom: 1px solid black; */
@@ -179,7 +179,7 @@ main{
     height: 80px;
     width: 100%;
     bottom: 0;
-    margin: 0 0 35px 282px;
+    margin: 0 0 10% 70%;
     z-index: 0;
 }
 
@@ -340,3 +340,4 @@ ul li{
 .footer-ul-copyrigth{
     margin: 20px 0 10px 0;
 }
+
