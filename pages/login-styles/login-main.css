@@ -11,33 +11,70 @@ html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    display: grid;
+}
 header{
-    position: fixed;
     display: flex;
-    top: 0;
     height: 90px;
     width: 100%;
     background-color: rgb(254, 63, 29);
 }
 
 main{
-    
     width: 100%;
     height: auto;
+    background-color: rgb(222, 119, 55);
+}
+
+
+.main-section-login{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 70vw;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    background-color: rgb(39, 73, 51);
+    background-color: rgb(254, 63, 29);
+    border-radius: 10px;
+    border: 1px black solid;
+    box-shadow: 1px 2px 3px black;
+}
+.main-section-login h1{
+    font-weight: 600;
+    font-size: 3rem;
+}
+.section-container-login{
+    display: flex;
+    height: 250px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    background-color: rgb(255, 253, 249);
+}
+
+.section-container-login form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.section-container-login form input{
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
 }
 
 
 footer{
-    position: fixed;
-    height: 90px;
-    width: 100%;
-    bottom: 0;
-    background-color: rgb(254, 63, 29);
+    
 }
-
-
-
-
 
 
 
