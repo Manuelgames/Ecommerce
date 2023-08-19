@@ -3,10 +3,7 @@ const inputCorreo = document.querySelector('#login-correo-input');
 const inputPassword = document.querySelector('#login-password-input');
 const parrafoValidacion = document.querySelector('.login-form-validacion');
 
-console.log(botonFormEnviar);
-console.log(inputCorreo);
-console.log(inputPassword);
-console.log(parrafoValidacion);
+
 
 
 botonFormEnviar.addEventListener('click', iniciarSesion);
