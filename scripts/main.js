@@ -25,10 +25,6 @@ const productlist = [];
 
 //despues para añadir los articulos al arreglo, con la funcion push añadimos los distintos objetos en este caso serian los articulos
 
-btncarritoproducts.addEventListener('click', valor);
-function valor(click){
-    console.log(click)
-}
 productlist.push({
     name: 'HAMBURGUESA BACON',
     price: '90.00',
@@ -82,9 +78,6 @@ function togglemodalcarrito(){
 }
 // //funcion para cerrar el cuadro del carrito de compras
 // tachacarrito.addEventListener('click', tachacarritofun);
-
-
-// console.log(main_opciones.classList[1]);
 
 function toggleMenuOpciones(){
     main_opciones.classList.toggle('inactive');
@@ -178,16 +171,12 @@ function renderProducts(product){
         //evento para contar la cantidad de productos del carrito    
         productimgcard.addEventListener('click', nuevoproducto);
 
-
-
-        console.log(productimgcard);
         //resolver con metodo de filtro para encontrar los productos que se hayan seleccionado
         function nuevoproducto(){
             if(contadorcarrito.innerHTML < 999){
                 let contadorgeneral = contadorcarrito.innerHTML;
                 contadorgeneral++;
                 contadorcarrito.innerText = contadorgeneral;
-                console.log(contadorcarrito.innerHTML); 
             }
             else{
                 alert('Has llegado al limite de productos, no puedes agregar mas productos');
