@@ -50,6 +50,12 @@ productlist.push({
     image: 'https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/13d252b964447e64a64e17a6f33c069a.jpg',
     detail: 'Una hamburguesa con carne de res, lechuga, tomate, cebolla, pan blando, pepinillos'
 });
+productlist.push({
+    name:'HAMBURGUESA GUACAMOLE',
+    price: '190',
+    image: 'https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/13d252b964447e64a64e17a6f33c069a.jpg',
+    detail: 'Una hamburguesa con carne de res, lechuga, tomate, cebolla, pan blando, pepinillos'
+});
 
 
 //La funcion la ponemos despues para que no haya problemas con la renderizacion de las cosas
@@ -169,7 +175,26 @@ function renderProducts(product){
         //metodo para poner la ruta de la imagen
         productimgcard.src = './assets/bt_add_to_cart.svg';
 
-        
+        //evento para contar la cantidad de productos del carrito    
+        productimgcard.addEventListener('click', nuevoproducto);
+
+
+
+        console.log(productimgcard);
+        //resolver con metodo de filtro para encontrar los productos que se hayan seleccionado
+        function nuevoproducto(){
+            if(contadorcarrito.innerHTML < 999){
+                let contadorgeneral = contadorcarrito.innerHTML;
+                contadorgeneral++;
+                contadorcarrito.innerText = contadorgeneral;
+                console.log(contadorcarrito.innerHTML); 
+            }
+            else{
+                alert('Has llegado al limite de productos, no puedes agregar mas productos');
+            }
+        }
+    
+
         //ASIGNAMOS LA JERARQUIA DE LAS ETIQUETAS CONTENEDORAS
         
         
@@ -207,16 +232,7 @@ function renderProducts(product){
         //   </figure>
         // </div>
         // </div> -->
-        
-        let cargarProducto = [];
-        let articulo = {};
-        let posicion = 0;
-        articulo = {
-            nombre: productname,
-            precio: productprice,
-            img: productimg,
-        };
-        
+
         //para identificar y tener un contador de cada producto que se vaya añadiendo al carrito 
         //comparamos si las imagenes son iguales se aumenta el contador para esto hacemos una condicional
         //que compare si las imagenes son iguales con su valor, hay que usar la funcion con parametros.
@@ -234,61 +250,5 @@ function renderProducts(product){
 // //cantidad de productos de añadidos
 // console.log(productlist.length)
 
-//evento para contar la cantidad de productos del carrito    
-// productimgcard.addEventListener('click', nuevoproducto(productlist, productlist.length));
 
-
-
-
-//resolver con metodo de filtro para encontrar los productos que se hayan seleccionado
-// function nuevoproducto(product, countproducts){
-//     if(contadorcarrito.innerHTML < 999){
-
-
-//         let contadorgeneral = contadorcarrito.innerText;
-//         let valor = [countproducts][countproducts];
-//         valor[1][1] = 3;
-//         console.log(valor[1][1]);
-//         let  i, j;
-//         let contadorproducto = [countproducts][countproducts];
-//         if(product){
-
-
-//             for(i = 0; i < countproducts; i++){
-//                 for(j = 0; j < countproducts; j++){
-
-//                     valor[i][j] = product[i].image;
-                   
-//                     if(valor[i][j] == product[j++].img){
-//                         contadorproducto[i][j]++;
-//                         contadorgeneral++;
-//                         console.log('El contador total es de ',contadorgeneral, 'La hamburguesa es:',product[j].name, 'la veces que se guardo este producto son:', contadorproducto[i][j]);
-//                     }
- 
-//                 }
-
-
-//                 //console.log(valor);
-
-//                 // if(valor == product[i].img){
-                    
-//                 //     if(){
-//                 //         contadorgeneral++;
-//                 //         contadorcarrito.innerText = contadorgeneral;
-//                 //         console.log(contadorcarrito.innerHTML);
-                    
-                    
-//                 //     }
-
-
-//                 // }
-                
-//             }
-//         }
-//     }
-//     else{
-//         alert('No es posible agregar mas productos a tu carrito has llegado al limite');
-//     }
-// }
-    
     

@@ -5,33 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesion</title>
     <link rel="stylesheet" href="../pages/login-styles/login-main.css">
-    <link rel="stylesheet" href="./styles/login-tablet.css" media="screen and (min-width:410px)">
-    <link rel="stylesheet" href="../styles/login-desktop.css" media="screen and (min-width:900px)">
+    <link rel="stylesheet" href="../pages/login-styles/login-tablet.css" media="screen and (min-width:410px)">
+    <link rel="stylesheet" href="../pages/login-styles/login-desktop.css" media="screen and (min-width:900px)">
 </head>
 <body>
     <header>    
         <nav class="header-nav-login">
-
+            <h1>HAMBURGER</h1>
         </nav>
     </header>
     <main>
         <section class="main-section-login">
-            <h1>Login</h1>
+            <h1>Ingresa para disfrutar</h1>
             <div class="section-container-login">
-                <form action="">
-                    <label for="correo">Correo</label>
-                    <input name="correo" type="text">
+                <form action="" method="post">
+                    <label for="login-correo-input">Correo</label>
+                    <input id="login-correo-input" autofocus name="correo" autocomplete="email" type="text">
+                    <br>
+                    <label for="login-password-input">Contraseña</label>
+                    <input id="login-password-input" type="password">
                     <br>
                     <br>
-                    <label for="contraseña">Contraseña</label>
-                    <input type="password">
+                    <input id="login-form-buttom" value="Ingresar" type="button">
+                    <br>
+                    <p class="login-form-validacion"></p>
                 </form>
+            </div>
+            <div class="section-login-cuenta">
+                <p>¿No tienes cuenta? <a href="">Registrate</a></p>
+                <br>
+                <a href="">Olvide mi contraseña</a>
             </div>
         </section>
     </main>
     <footer>
-
+        <ul class="footer-ul-redes">
+            <li> 
+                <a href="">
+                    <img src="../assets/facebook-logo.webp" alt="imagen del logo de instagram">
+                    <p>Facebook</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="../assets/instagram.png" alt="imagen del logo de instagram">
+                    <p href="">Instagram</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="../assets/youtube-icon.png" alt="imagen del logo de Youtube">
+                    <p href="">Youtube</p>
+                </a>
+            </li>
+        </ul>
+        <ul class="footer-ul-copyrigth">
+            <li>DERECHOS RESERVADOS COPYRIGTH </li>
+            <br>
+            <li>Create by Manuel Alejadro</li>
+        </ul>
     </footer>
-    <script src=""></script>
+    <script src="../scripts/login.js"></script>
 </body>
 </html>
