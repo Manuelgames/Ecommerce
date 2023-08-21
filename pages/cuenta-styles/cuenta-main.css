@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+
+
+body{
+    background-color: rgb(10, 9, 9);
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    height: 100px;
+    width: 100%;
+    background-color: black;
+}
+
+nav{
+    display: flex;
+    height: 100%;
+    justify-content: space-around;    
+    align-items: center;
+}
+
+nav h1{
+    font-size: 2.6rem;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+nav h1 a{
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+nav img{
+    height: 40px;
+    width: 40px;
+}

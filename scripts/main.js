@@ -185,8 +185,6 @@ function renderProducts(product){
     
 
         //ASIGNAMOS LA JERARQUIA DE LAS ETIQUETAS CONTENEDORAS
-        
-        
         //metodo para meter a lo hijos a los padres
         //1
         cardscontainer.appendChild(productcard);
@@ -225,13 +223,6 @@ function renderProducts(product){
         //para identificar y tener un contador de cada producto que se vaya añadiendo al carrito 
         //comparamos si las imagenes son iguales se aumenta el contador para esto hacemos una condicional
         //que compare si las imagenes son iguales con su valor, hay que usar la funcion con parametros.
-
-        
-        
-        
-        
-        
-        
     }
 }
 
