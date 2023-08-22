@@ -44,3 +44,55 @@ nav img{
     height: 40px;
     width: 40px;
 }
+
+main{
+    height: auto;
+    width: 100%;
+
+}
+
+.main-section-form{
+    height: auto;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.main-section-form form{
+    min-height: 400px;
+    width: 100%;
+    font-size: 2rem;
+}
+
+.section-form-cuenta{
+    display: flex;
+    justify-content: center;
+}
+
+.form-container-fotoperfil{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border: 3px solid tomato;
+    border-radius: 30px;
+    box-shadow: 1px 1px 2px 2px black;
+}
+
+.form-input-fotoperfil{
+    position: absolute;
+    height: 300px;
+    width: 250px;
+    opacity: 0;
+}
+.form-container-fotoperfil p{
+    text-align: center;
+    height: 45px;
+    width: 200px;
+    margin: 10px 10px;
+    background-color: tomato;
+    border-radius: 10px;
+}
