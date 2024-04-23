@@ -1,0 +1,12 @@
+main{
+    display: grid;
+    
+}
+
+.menu-opcion{
+    display: none;
+}
+
+.main-carrito-compras{
+    display: none;
+}
